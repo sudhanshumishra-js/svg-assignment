@@ -29,20 +29,25 @@ const Login = () => {
             <main className='parent'>
                 <section className='loginContainer '>
                     <div className='container'>
+                        <h1 className='login__heading'>Login Form</h1>
                         <form className='login__form' onSubmit={handleSubmit}>
-                            <label htmlFor="email">Email:</label>
-                            <input className='login__form__input-field' type="email" name="email" id="email" placeholder='email' autoComplete='email' value={email} onChange={handleEmailChange} />
-                            {
-                                email && emailError && <p className='login__form__error-message'>{emailError}</p>
-                            }
-                            <label htmlFor="password">Password:</label>
-                            <input type="password" className='login__form__input-field' name="password" id="password" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-                            {
-                                email && emailError ? <button className='login__form__submit-button--disabled' disabled>Login</button>
-                                    :
-                                    <button className='login__form__submit-button--active'>Login</button>
+                            <div>
+                                <label htmlFor="email">Email:</label>
+                                <input className='login__form__input-field' type="email" name="email" id="email" placeholder='email' autoComplete='email' value={email} onChange={handleEmailChange} />
+                                {
+                                    email && emailError && <p className='login__form__error-message'>{emailError}</p>
+                                }
+                            </div>
+                            <div>
+                                <label htmlFor="password">Password:</label>
+                                <input type="password" className='login__form__input-field' name="password" id="password" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                                {
+                                    email && emailError ? <button className='login__form__submit-button--disabled' disabled>Login</button>
+                                        :
+                                        <button className='login__form__submit-button--active'>Login</button>
 
-                            }
+                                }
+                            </div>
                         </form>
                     </div>
                 </section>
